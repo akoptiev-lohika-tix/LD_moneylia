@@ -65,7 +65,7 @@ const JoinScreen: React.FC = () => {
                         />
                     </TouchableOpacity>
                 </View>
-                <View>
+                <View style={styles.link}>
                     <TextStyled
                         text={JOIN_SCREEN_LINK_TEXT}
                         fontFamily={'Rubik_400Regular'}
@@ -104,6 +104,9 @@ const styles = StyleSheet.create({
         paddingVertical: 16,
         borderRadius: 4,
         marginBottom: 24,
+    },
+    link: {
+        alignItems: 'center',
     },
 });
 
