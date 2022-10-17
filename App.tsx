@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import JoinScreen from './components/join-screen/join-screen';
+import JoinScreen from './src/screens/join-screen/join-screen';
 
 export default function App() {
     return (

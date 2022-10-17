@@ -8,7 +8,7 @@ import {
 } from '@expo-google-fonts/work-sans';
 import { Rubik_400Regular } from '@expo-google-fonts/rubik';
 
-import TextStyled from '../text-styled/text-styled';
+import TextStyled from '../../components/text-styled/text-styled';
 import {
     colors,
     JOIN_SCREEN_BUTTON_TEXT,
