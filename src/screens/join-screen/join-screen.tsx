@@ -55,7 +55,7 @@ const JoinScreen: React.FC = () => {
                     />
                 </View>
                 <View>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} testID={'join-button'}>
                         <TextStyled
                             text={JOIN_SCREEN_BUTTON_TEXT}
                             fontFamily={'WorkSans_600SemiBold'}
