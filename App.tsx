@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, Image } from 'react-native';
+import { Image } from 'react-native';
 
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 
 import JoinScreen from './src/screens/join-screen/join-screen';
+import SummaryScreen from './src/screens/summary-screen/summary-screen';
 
 function cacheImages(images: any[]): Promise<any>[] {
   return images.map((image) => {
@@ -31,14 +32,14 @@ export default function App() {
         const imageAssets = cacheImages([require('./src/assets/join-screen-image.png')]);
 
         const fontAssets = cacheFonts([
-          { FontSource: '@expo-google-fonts/work-sans' },
-          { FontSource: '@expo-google-fonts/rubik' },
+          { 'Work-Sans': '@expo-google-fonts/work-sans' },
+          { 'Rubik': '@expo-google-fonts/rubik' },
         ]);
 
         await Promise.all([...imageAssets, ...fontAssets]);
       } catch (e: any) {
         // You might want to provide this error information to an error reporting service
-        console.warn(e);
+        console.log(e);
       } finally {
         setAppIsReady(true);
         SplashScreen.hideAsync();
@@ -53,17 +54,7 @@ export default function App() {
   }
 
   return (
-    <View>
-      <JoinScreen />
-    </View>
+    <SummaryScreen />
+    // <JoinScreen />
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
