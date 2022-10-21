@@ -9,5 +9,18 @@ export const colors = {
   },
   grey: {
     main: '#6f6d7b',
+    dark: '#312e43',
+    light: '#83828e',
+  },
+
+  error: {
+    main: '#f83e5a',
+  },
+};
+
+export const shadows = {
+  shadow1: {
+    shadowColor: 'rgba(0, 0, 0, 0.08)',
+    shadowOffset: { width: 0, height: 0 },
   },
 };
