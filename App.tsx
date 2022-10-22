@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Image } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
@@ -57,11 +59,15 @@ export default function App() {
   if (!appIsReady) {
     return null;
   }
-
+  const Stack = createNativeStackNavigator();
   return (
     <Provider store={store}>
-      <SummaryScreen />
-      {/*<JoinScreen />*/}
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="JoinScreen">
+          <Stack.Screen name="JoinScreen" component={JoinScreen} />
+          <Stack.Screen name="Summary" component={SummaryScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>
   );
 }

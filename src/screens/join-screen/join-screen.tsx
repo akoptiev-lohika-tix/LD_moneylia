@@ -9,8 +9,11 @@ import {
   JOIN_SCREEN_LINK_TEXT,
   JOIN_SCREEN_TITLE,
 } from '../../variables';
+type Props = {
+  navigation: any;
+};
 
-const JoinScreen: React.FC = () => {
+const JoinScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.image}>
@@ -38,7 +41,11 @@ const JoinScreen: React.FC = () => {
           />
         </View>
         <View>
-          <TouchableOpacity style={styles.button} testID={'join-button'}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('Summary')}
+            testID={'join-button'}
+          >
             <TextStyled
               text={JOIN_SCREEN_BUTTON_TEXT}
               fontFamily={'Work Sans SemiBold'}
