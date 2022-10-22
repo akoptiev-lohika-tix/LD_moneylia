@@ -21,3 +21,6 @@ export const DASHBOARD_CONTRIBUTIONS_PAID_TITLE = 'Paid';
 export const DASHBOARD_CONTRIBUTIONS_DUE_TITLE = 'Due';
 export const DASHBOARD_CONTRIBUTIONS_ADVANCED_PAYMENT_TITLE = 'Advance payment';
 export const DASHBOARD_CONTRIBUTIONS_MODULARITY_TITLE = 'Modularity';
+
+// Not Found Screen
+export const NOT_FOUND_SCREEN_TEXT = 'Seems like this part of app is developing now. Please come back later'

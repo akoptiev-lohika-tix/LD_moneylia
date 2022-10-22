@@ -7,6 +7,7 @@ import DashboardTab from '../bottom-tabs/dashboard-tab/dashboard-tab';
 import ExtractTab from '../bottom-tabs/extract-tab/extract-tab';
 import PagoPaTab from '../bottom-tabs/pagoPa-tab/pagoPa-tab';
 import ProfileTab from '../bottom-tabs/profile-tab/profile-tab';
+import NotFoundScreen from '../../screens/not-found-screen/not-found-screen';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -30,7 +31,7 @@ const MainApp: React.FC = () => {
       />
       <Tab.Screen
         name="Extract"
-        component={Dashboard}
+        component={NotFoundScreen}
         options={{
           headerShown: false,
           tabBarButton: ExtractTab,
