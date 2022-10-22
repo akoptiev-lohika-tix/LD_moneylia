@@ -8,10 +8,10 @@ import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 
 import JoinScreen from './src/screens/join-screen/join-screen';
-import SummaryScreen from './src/screens/summary-screen/summary-screen';
 import { store } from './src/redux/store';
 import { Provider } from 'react-redux';
 import { RootStackParamList } from './src/interfaces';
+import MainApp from "./src/components/main-app/main-app";
 
 function cacheImages(images: any[]): Promise<any>[] {
   return images.map((image) => {
@@ -66,7 +66,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="JoinScreen">
           <Stack.Screen name="JoinScreen" component={JoinScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Summary" component={SummaryScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Main" component={MainApp} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

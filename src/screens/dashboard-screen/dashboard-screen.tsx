@@ -13,7 +13,8 @@ import Spinner from '../../components/spinner/spinner';
 import ErrorView from '../../components/error-view/error-view';
 import UserSummaryContributions from '../../components/user-summary-contributions/user-summary-contributions';
 
-const SummaryScreen: React.FC = () => {
+
+const Dashboard: React.FC = () => {
   const dispatch = useAppDispatch();
   const { user, loadingUser, errorUser } = useAppSelector((state) => state.user);
   const { shortName } = useShortName(user?.name);
@@ -21,6 +22,7 @@ const SummaryScreen: React.FC = () => {
   useEffect(() => {
     dispatch(fetchUserById(USER_ID));
   }, []);
+
 
   return (
     <>
@@ -51,7 +53,7 @@ const SummaryScreen: React.FC = () => {
   );
 };
 
-export default SummaryScreen;
+export default Dashboard;
 
 const styles = StyleSheet.create({
   container: {

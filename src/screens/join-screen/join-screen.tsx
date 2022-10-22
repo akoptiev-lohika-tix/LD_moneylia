@@ -46,7 +46,7 @@ const JoinScreen: React.FC<Props> = ({ navigation }) => {
         <View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate('Summary')}
+            onPress={() => navigation.navigate('Main')}
             testID={'join-button'}
           >
             <TextStyled
