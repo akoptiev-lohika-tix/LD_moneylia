@@ -3,46 +3,55 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { RootTabParamList } from '../../interfaces';
 import Dashboard from '../../screens/dashboard-screen/dashboard-screen';
-import { colors } from '../../variables';
-import DashboardTabIcon from '../../svg-icons/dashboard-tab-icon';
-import ExtractTabIcon from '../../svg-icons/extract-tab-icon';
-import PagoPaTabIcon from '../../svg-icons/pago-pa-tab-icon';
-import ProfileTabIcon from '../../svg-icons/profile-tab-icon';
+import DashboardTab from '../bottom-tabs/dashboard-tab/dashboard-tab';
+import ExtractTab from '../bottom-tabs/extract-tab/extract-tab';
+import PagoPaTab from '../bottom-tabs/pagoPa-tab/pagoPa-tab';
+import ProfileTab from '../bottom-tabs/profile-tab/profile-tab';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 const MainApp: React.FC = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Dashboard"
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-
-          switch (route.name) {
-            case 'Dashboard': {
-              return <DashboardTabIcon width={22} height={22} color={color} />;
-            }
-
-            case 'Extract': {
-              return <ExtractTabIcon width={28} height={28} color={color} />;
-            }
-
-            case 'PagoPA': {
-              return <PagoPaTabIcon width={28} height={28} color={color} />;
-            }
-
-            default:
-              return <ProfileTabIcon width={28} height={28} color={color} />;
-          }
+      screenOptions={{
+        tabBarStyle: {
+          height: 86,
+          paddingHorizontal: 28,
         },
-        tabBarActiveTintColor: colors.primary.dark,
-        tabBarInactiveTintColor: colors.grey.light,
-      })}
+      }}
     >
-      <Tab.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }} />
-      <Tab.Screen name="Extract" component={Dashboard} />
-      <Tab.Screen name="PagoPA" component={Dashboard} />
-      <Tab.Screen name="Profile" component={Dashboard} />
+      <Tab.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={{
+          headerShown: false,
+          tabBarButton: DashboardTab,
+        }}
+      />
+      <Tab.Screen
+        name="Extract"
+        component={Dashboard}
+        options={{
+          headerShown: false,
+          tabBarButton: ExtractTab,
+        }}
+      />
+      <Tab.Screen
+        name="PagoPA"
+        component={Dashboard}
+        options={{
+          headerShown: false,
+          tabBarButton: PagoPaTab,
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Dashboard}
+        options={{
+          headerShown: false,
+          tabBarButton: ProfileTab,
+        }}
+      />
     </Tab.Navigator>
   );
 };
