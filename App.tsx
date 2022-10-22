@@ -11,6 +11,7 @@ import JoinScreen from './src/screens/join-screen/join-screen';
 import SummaryScreen from './src/screens/summary-screen/summary-screen';
 import { store } from './src/redux/store';
 import { Provider } from 'react-redux';
+import { RootStackParamList } from './src/interfaces';
 
 function cacheImages(images: any[]): Promise<any>[] {
   return images.map((image) => {
@@ -59,13 +60,13 @@ export default function App() {
   if (!appIsReady) {
     return null;
   }
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
   return (
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="JoinScreen">
-          <Stack.Screen name="JoinScreen" component={JoinScreen} />
-          <Stack.Screen name="Summary" component={SummaryScreen} />
+          <Stack.Screen name="JoinScreen" component={JoinScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Summary" component={SummaryScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

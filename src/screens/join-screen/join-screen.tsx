@@ -9,8 +9,11 @@ import {
   JOIN_SCREEN_LINK_TEXT,
   JOIN_SCREEN_TITLE,
 } from '../../variables';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../interfaces';
+
 type Props = {
-  navigation: any;
+  navigation: NativeStackNavigationProp<RootStackParamList, 'JoinScreen'>;
 };
 
 const JoinScreen: React.FC<Props> = ({ navigation }) => {
@@ -75,6 +78,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 84,
     paddingHorizontal: 20,
+    backgroundColor: colors.common.white,
+    height: '100%',
   },
   image: {
     marginBottom: 24,

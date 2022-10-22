@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JoinScreen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#ffffff",
+      "height": "100%",
+      "paddingHorizontal": 20,
+      "paddingTop": 84,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 24,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/assets/images/join-screen-image.png",
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 36,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginBottom": 8,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#3a3b7b",
+            "fontFamily": "Work Sans SemiBold",
+            "fontSize": 32,
+            "lineHeight": 38,
+          }
+        }
+      >
+        Save your money
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "marginBottom": 60,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#6f6d7b",
+            "fontFamily": "Work Sans Regular",
+            "fontSize": 14,
+            "letterSpacing": -0.5,
+            "lineHeight": 21,
+            "textAlign": "center",
+          }
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est in quis erat a sit.
+      </Text>
+    </View>
+    <View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#7476ed",
+            "borderRadius": 4,
+            "marginBottom": 24,
+            "opacity": 1,
+            "paddingHorizontal": 75,
+            "paddingVertical": 16,
+          }
+        }
+        testID="join-button"
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontFamily": "Work Sans SemiBold",
+              "fontSize": 18,
+              "lineHeight": 18,
+            }
+          }
+        >
+          Join for free
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#3a3b7b",
+            "fontFamily": "Rubik Regular",
+            "fontSize": 14,
+            "lineHeight": 21,
+            "textDecorationLine": "underline",
+          }
+        }
+      >
+        Don't have SPID or CIE? Find out more
+      </Text>
+    </View>
+  </View>
+</View>
+`;
