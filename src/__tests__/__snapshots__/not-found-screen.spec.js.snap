@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundScreen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#f8f4ff",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingVertical": 120,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderRadius": 12,
+        "flexDirection": "row",
+        "paddingHorizontal": 12,
+        "paddingVertical": 48,
+        "shadowColor": "rgba(0, 0, 0, 0.08)",
+        "shadowOffset": Object {
+          "height": 0,
+          "width": 0,
+        },
+      }
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      color={4294458970}
+      fill="none"
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      testID="not-found-icon"
+      tintColor={4294458970}
+      width={28}
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          Array [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          clipRule={0}
+          d="M7.269 2.586A2 2 0 0 1 8.683 2h6.634a2 2 0 0 1 1.414.586l4.683 4.683A2 2 0 0 1 22 8.683v6.634a2 2 0 0 1-.586 1.414l-4.683 4.683a2 2 0 0 1-1.414.586H8.683a2 2 0 0 1-1.414-.586l-4.683-4.683A2 2 0 0 1 2 15.317V8.683a2 2 0 0 1 .586-1.414l4.683-4.683ZM15.317 4H8.683L4 8.683v6.634L8.683 20h6.634L20 15.317V8.683L15.317 4ZM10.95 15.45a1 1 0 0 1 1-1h.1a1 1 0 0 1 1 1v.1a1 1 0 0 1-1 1h-.1a1 1 0 0 1-1-1v-.1Zm2.05-7a1 1 0 1 0-2 0v4a1 1 0 0 0 2 0v-4Z"
+          fill={4294458970}
+          fillRule={0}
+          propList={
+            Array [
+              "fill",
+              "fillRule",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <Text
+      style={
+        Object {
+          "color": "#3a3b7b",
+          "fontFamily": "Work Sans SemiBold",
+          "fontSize": 18,
+          "lineHeight": 20,
+          "marginLeft": 10,
+        }
+      }
+    >
+      Seems like this part of app is developing now. Please come back later
+    </Text>
+  </View>
+</View>
+`;

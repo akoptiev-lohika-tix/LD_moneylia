@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Image, Pressable } from 'react-native';
 
 import TextStyled from '../../components/text-styled/text-styled';
 import {
@@ -44,8 +44,8 @@ const JoinScreen: React.FC<Props> = ({ navigation }) => {
           />
         </View>
         <View>
-          <TouchableOpacity
-            style={styles.button}
+          <Pressable
+            style={({ pressed }) => [styles.button, pressed ? styles.pressed : null]}
             onPress={() => navigation.navigate('Main')}
             testID={'join-button'}
           >
@@ -56,9 +56,12 @@ const JoinScreen: React.FC<Props> = ({ navigation }) => {
               lineHeight={18}
               color={colors.common.white}
             />
-          </TouchableOpacity>
+          </Pressable>
         </View>
-        <View style={styles.link}>
+        <Pressable
+          style={({ pressed }) => [styles.link, pressed ? styles.pressed : null]}
+          onPress={() => navigation.navigate('NotFound')}
+        >
           <TextStyled
             text={JOIN_SCREEN_LINK_TEXT}
             fontFamily={'Rubik Regular'}
@@ -67,7 +70,7 @@ const JoinScreen: React.FC<Props> = ({ navigation }) => {
             color={colors.primary.main}
             textDecorationLine={'underline'}
           />
-        </View>
+        </Pressable>
       </View>
     </View>
   );
@@ -99,6 +102,9 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     borderRadius: 4,
     marginBottom: 24,
+  },
+  pressed: {
+    opacity: 0.5,
   },
   link: {
     alignItems: 'center',

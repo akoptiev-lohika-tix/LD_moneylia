@@ -11,7 +11,9 @@ import JoinScreen from './src/screens/join-screen/join-screen';
 import { store } from './src/redux/store';
 import { Provider } from 'react-redux';
 import { RootStackParamList } from './src/interfaces';
-import MainApp from "./src/components/main-app/main-app";
+import MainApp from './src/components/main-app/main-app';
+import NotFoundScreen from './src/screens/not-found-screen/not-found-screen';
+import { colors } from './src/variables';
 
 function cacheImages(images: any[]): Promise<any>[] {
   return images.map((image) => {
@@ -27,13 +29,13 @@ function cacheFonts(fonts: any[]): Promise<void>[] {
   return fonts.map((font) => Font.loadAsync(font));
 }
 
-export default function App() {
+const App: React.FC = () => {
   const [appIsReady, setAppIsReady] = useState(false);
 
   useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
-        SplashScreen.preventAutoHideAsync();
+        await SplashScreen.preventAutoHideAsync();
 
         const imageAssets = cacheImages([require('./src/assets/images/join-screen-image.png')]);
 
@@ -50,7 +52,7 @@ export default function App() {
         console.log(e);
       } finally {
         setAppIsReady(true);
-        SplashScreen.hideAsync();
+        await SplashScreen.hideAsync();
       }
     }
 
@@ -60,6 +62,7 @@ export default function App() {
   if (!appIsReady) {
     return null;
   }
+
   const Stack = createNativeStackNavigator<RootStackParamList>();
   return (
     <Provider store={store}>
@@ -67,8 +70,19 @@ export default function App() {
         <Stack.Navigator initialRouteName="JoinScreen">
           <Stack.Screen name="JoinScreen" component={JoinScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Main" component={MainApp} options={{ headerShown: false }} />
+          <Stack.Screen
+            name="NotFound"
+            component={NotFoundScreen}
+            options={{
+              title: '',
+              headerStyle: { backgroundColor: colors.primary.light },
+              headerTintColor: colors.common.black,
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
   );
-}
+};
+
+export default App;
