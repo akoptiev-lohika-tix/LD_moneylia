@@ -29,13 +29,13 @@ function cacheFonts(fonts: any[]): Promise<void>[] {
   return fonts.map((font) => Font.loadAsync(font));
 }
 
-export default function App() {
+const App: React.FC = () => {
   const [appIsReady, setAppIsReady] = useState(false);
 
   useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
-        SplashScreen.preventAutoHideAsync();
+        await SplashScreen.preventAutoHideAsync();
 
         const imageAssets = cacheImages([require('./src/assets/images/join-screen-image.png')]);
 
@@ -52,7 +52,7 @@ export default function App() {
         console.log(e);
       } finally {
         setAppIsReady(true);
-        SplashScreen.hideAsync();
+        await SplashScreen.hideAsync();
       }
     }
 
@@ -62,6 +62,7 @@ export default function App() {
   if (!appIsReady) {
     return null;
   }
+
   const Stack = createNativeStackNavigator<RootStackParamList>();
   return (
     <Provider store={store}>
@@ -82,4 +83,6 @@ export default function App() {
       </NavigationContainer>
     </Provider>
   );
-}
+};
+
+export default App;

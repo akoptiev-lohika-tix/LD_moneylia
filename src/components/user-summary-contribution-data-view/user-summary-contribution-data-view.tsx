@@ -30,7 +30,10 @@ const UserSummaryContributionDataView: React.FC<Props> = ({
   const { user } = useAppSelector((state) => state.user);
   const IconComponent = icon;
   return (
-    <Pressable style={styles.container} onPress={() => navigation.navigate('NotFound')}>
+    <Pressable
+      style={({ pressed }) => [styles.container, pressed ? styles.pressed : null]}
+      onPress={() => navigation.navigate('NotFound')}
+    >
       <View style={styles.icon}>
         <IconComponent width={iconWidth} height={iconHeight} color={iconColor} />
       </View>
@@ -54,6 +57,10 @@ const styles = StyleSheet.create({
     shadowOffset: shadows.shadow1.shadowOffset,
     paddingVertical: 24,
     flex: 1,
+  },
+  pressed: {
+    opacity: 0.5,
+    backgroundColor: colors.grey.pressed,
   },
   icon: {
     marginBottom: 10,

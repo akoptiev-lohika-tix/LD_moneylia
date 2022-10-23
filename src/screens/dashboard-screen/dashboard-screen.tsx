@@ -1,5 +1,6 @@
 import React, { memo, useEffect } from 'react';
 import { View, Text, StyleSheet, StatusBar, Pressable } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { colors, WELCOME_TEXT } from '../../variables';
 import LogoIcon from '../../svg-icons/logo-icon';
@@ -13,7 +14,6 @@ import Spinner from '../../components/spinner/spinner';
 import ErrorView from '../../components/error-view/error-view';
 import UserSummaryContributions from '../../components/user-summary-contributions/user-summary-contributions';
 import { RootStackParamList } from '../../interfaces';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'NotFound'>;
@@ -39,7 +39,10 @@ const Dashboard: React.FC<Props> = ({ navigation }) => {
             <View style={styles.topBar}>
               <View style={styles.iconBar}>
                 <LogoIcon color={colors.common.white} width={28} height={22} />
-                <Pressable onPress={() => navigation.navigate('NotFound')}>
+                <Pressable
+                  style={({ pressed }) => (pressed ? styles.pressed : null)}
+                  onPress={() => navigation.navigate('NotFound')}
+                >
                   <ChatIcon color={colors.common.white} width={28} height={28} />
                 </Pressable>
               </View>
@@ -73,7 +76,9 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 16,
     borderBottomRightRadius: 16,
   },
-
+  pressed: {
+    opacity: 0.5,
+  },
   iconBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',

@@ -1,7 +1,7 @@
 export const colors = {
   common: {
     white: '#ffffff',
-    black: '#000000'
+    black: '#000000',
   },
   primary: {
     main: '#3a3b7b',
@@ -12,6 +12,7 @@ export const colors = {
     main: '#6f6d7b',
     dark: '#312e43',
     light: '#83828e',
+    pressed: '#cccccc',
   },
 
   error: {
