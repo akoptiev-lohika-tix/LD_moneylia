@@ -31,7 +31,7 @@ const DashboardUserSummary: React.FC = () => {
         />
         <UserSummaryDataView title={USER_SUMMARY_BIRTHDAY_TITLE} data={user?.birthday} />
       </View>
-      <View style={styles.dataTopBar}>
+      <View style={styles.dataBottomBar}>
         <UserSummaryDataView title={USER_SUMMARY_CITY_TITLE} data={user?.city} marginRight={12} />
         <UserSummaryDataView
           title={USER_SUMMARY_COUNTRY_TITLE}
@@ -71,6 +71,9 @@ const styles = StyleSheet.create({
   dataTopBar: {
     flexDirection: 'row',
     marginBottom: 16,
+  },
+  dataBottomBar: {
+    flexDirection: 'row',
   },
 });
 

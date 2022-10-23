@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import {
@@ -9,8 +9,17 @@ import {
 } from '../../variables';
 import HeaderBar from '../../components/header-bar/header-bar';
 import PagoPaLogoIcon from '../../svg-icons/pago-pa-logo-icon';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { fetchPayments } from '../../api';
+import { USER_ID } from '../../constants';
 
 const TaxPaymentsScreen: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const { payments, loadingPayments, errorPayments } = useAppSelector((state) => state.payments);
+
+  useEffect(() => {
+    dispatch(fetchPayments(USER_ID));
+  }, []);
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
@@ -28,6 +37,12 @@ const TaxPaymentsScreen: React.FC = () => {
         <Text style={styles.contentTitle}>{TAX_PAYMENTS_CONTENT_TITLE}</Text>
         <Text style={styles.contentDescription}>{TAX_PAYMENTS_CONTENT_DESCRIPTION}</Text>
       </View>
+      <View>
+        <Text>
+          {payments && payments[0].id}
+          {payments && payments[1].id}
+        </Text>
+      </View>
     </View>
   );
 };
@@ -39,14 +54,14 @@ const styles = StyleSheet.create({
   },
   topBar: {
     backgroundColor: colors.rose.main,
-    paddingTop: 60,
+    paddingTop: 40,
     paddingHorizontal: 16,
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
     marginBottom: 24,
   },
   headerContainer: {
-    marginBottom: 26,
+    marginBottom: 18,
   },
   topBarTitleContainer: {
     flexDirection: 'row',

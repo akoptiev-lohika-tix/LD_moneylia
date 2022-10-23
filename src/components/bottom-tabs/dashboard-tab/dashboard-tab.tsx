@@ -5,6 +5,12 @@ import { colors } from '../../../variables';
 
 const DashboardTab = (props: any) => {
   const styles = StyleSheet.create({
+    container: {
+      marginRight: 28,
+    },
+    iconContainer: {
+      marginBottom: 2,
+    },
     text: {
       fontFamily: 'Rubik Regular',
       fontSize: 11,
@@ -12,29 +18,27 @@ const DashboardTab = (props: any) => {
       letterSpacing: 0.01,
       color: props.accessibilityState.selected ? colors.primary.dark : colors.grey.light,
     },
-    iconView: {
-      marginTop: 8,
-      marginBottom: 6,
-    },
   });
   return (
-    <Pressable
-      {...props}
-      style={
-        props.accessibilityState.selected
-          ? [props.style, { borderTopColor: colors.primary.dark, borderTopWidth: 2 }]
-          : props.style
-      }
-    >
-      <View style={styles.iconView}>
-        <DashboardTabIcon
-          width={28}
-          height={28}
-          color={props.accessibilityState.selected ? colors.primary.dark : colors.grey.light}
-        />
-      </View>
-      <Text style={styles.text}>Dashboard</Text>
-    </Pressable>
+    <View style={styles.container}>
+      <Pressable
+        {...props}
+        style={
+          props.accessibilityState.selected
+            ? [props.style, { borderTopColor: colors.primary.dark, borderTopWidth: 2 }]
+            : props.style
+        }
+      >
+        <View style={styles.iconContainer}>
+          <DashboardTabIcon
+            width={28}
+            height={28}
+            color={props.accessibilityState.selected ? colors.primary.dark : colors.grey.light}
+          />
+        </View>
+        <Text style={styles.text}>Dashboard</Text>
+      </Pressable>
+    </View>
   );
 };
 

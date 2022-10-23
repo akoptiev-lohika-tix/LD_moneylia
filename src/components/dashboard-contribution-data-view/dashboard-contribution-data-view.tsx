@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.grey.pressed,
   },
   icon: {
-    marginBottom: 10,
+    marginBottom: 8,
   },
   title: {
     fontFamily: 'Work Sans Regular',

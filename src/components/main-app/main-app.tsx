@@ -17,8 +17,14 @@ const MainApp: React.FC = () => {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          height: 86,
+          height: 70,
           paddingHorizontal: 28,
+          paddingBottom: 20,
+          justifyContent: 'space-around',
+        },
+        tabBarItemStyle: {
+          width: 58,
+          maxWidth: 58,
         },
       }}
     >

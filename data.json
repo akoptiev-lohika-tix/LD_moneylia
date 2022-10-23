@@ -1,19 +1,31 @@
 {
-    "name": "John Simpson",
-    "status": "subscribed",
-    "birthday": "1994-01-26",
-    "city": "Barcelona",
-    "country": "es",
-    "currency": "euro",
-    "contributions": [
-        {
-            "year": 2022,
-            "data": {
-                "paid": null,
-                "due": null,
-                "advancePayment": 1230,
-                "modularity": 340.59
-            }
-        }
-    ]
+  "name": "John Simpson",
+  "status": "subscribed",
+  "birthday": "1994-01-26",
+  "city": "Barcelona",
+  "country": "es",
+  "currency": "euro",
+  "contributions": [
+    {
+      "year": 2022,
+      "data": {
+        "paid": null,
+        "due": null,
+        "advancePayment": 1230,
+        "modularity": 340.59
+      }
+    }
+  ],
+  "payments": {
+    "description": "subjective and supplementary contribution year 2021 expires 28-02-2022",
+    "expiryDate": "28/02/2022",
+    "sum": 1234.99,
+    "address": {
+      "code": "ENPACL",
+      "street:": "Via del Caravaggio n. 78",
+      "postCode": "00147 (RM)"
+    },
+    "taxCode": 8011911704444,
+    "noticeCode": 301000000014982222
+  }
 }

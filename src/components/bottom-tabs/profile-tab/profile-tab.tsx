@@ -5,6 +5,9 @@ import ProfileTabIcon from '../../../svg-icons/profile-tab-icon';
 
 const ProfileTab = (props: any) => {
   const styles = StyleSheet.create({
+    iconContainer: {
+      marginBottom: 2,
+    },
     text: {
       fontFamily: 'Rubik Regular',
       fontSize: 11,
@@ -12,28 +15,27 @@ const ProfileTab = (props: any) => {
       letterSpacing: 0.01,
       color: props.accessibilityState.selected ? colors.primary.dark : colors.grey.light,
     },
-    iconView: {
-      marginBottom: 6,
-    },
   });
   return (
-    <Pressable
-      {...props}
-      style={
-        props.accessibilityState.selected
-          ? [props.style, { borderTopColor: colors.primary.dark, borderTopWidth: 2 }]
-          : props.style
-      }
-    >
-      <View style={styles.iconView}>
-        <ProfileTabIcon
-          width={28}
-          height={28}
-          color={props.accessibilityState.selected ? colors.primary.dark : colors.grey.light}
-        />
-      </View>
-      <Text style={styles.text}>Profile</Text>
-    </Pressable>
+    <View>
+      <Pressable
+        {...props}
+        style={
+          props.accessibilityState.selected
+            ? [props.style, { borderTopColor: colors.primary.dark, borderTopWidth: 2 }]
+            : props.style
+        }
+      >
+        <View style={styles.iconContainer}>
+          <ProfileTabIcon
+            width={28}
+            height={28}
+            color={props.accessibilityState.selected ? colors.primary.dark : colors.grey.light}
+          />
+        </View>
+        <Text style={styles.text}>Profile</Text>
+      </Pressable>
+    </View>
   );
 };
 
