@@ -14,6 +14,7 @@ import Spinner from '../../components/spinner/spinner';
 import ErrorView from '../../components/error-view/error-view';
 import DashboardContributions from '../../components/dashboard-contributions/dashboard-contributions';
 import { RootStackParamList } from '../../interfaces';
+import HeaderBar from '../../components/header-bar/header-bar';
 
 type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'NotFound'>;
@@ -37,14 +38,8 @@ const Dashboard: React.FC<Props> = ({ navigation }) => {
           <StatusBar barStyle={'light-content'} />
           <View style={styles.container}>
             <View style={styles.topBar}>
-              <View style={styles.iconBar}>
-                <LogoIcon color={colors.common.white} width={28} height={22} />
-                <Pressable
-                  style={({ pressed }) => (pressed ? styles.pressed : null)}
-                  onPress={() => navigation.navigate('NotFound')}
-                >
-                  <ChatIcon color={colors.common.white} width={28} height={28} />
-                </Pressable>
+              <View style={styles.headerContainer}>
+                <HeaderBar />
               </View>
               <View>
                 <Text style={styles.nameText}>Hello, {shortName}</Text>
@@ -53,7 +48,7 @@ const Dashboard: React.FC<Props> = ({ navigation }) => {
             </View>
             <View style={styles.content}>
               <DashboardUserSummary />
-              <DashboardContributions navigation={navigation} />
+              <DashboardContributions />
             </View>
           </View>
         </>
@@ -76,15 +71,9 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 16,
     borderBottomRightRadius: 16,
   },
-  pressed: {
-    opacity: 0.5,
-  },
-  iconBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  headerContainer: {
     marginBottom: 34,
   },
-
   nameText: {
     fontFamily: 'Work Sans Regular',
     fontSize: 32,

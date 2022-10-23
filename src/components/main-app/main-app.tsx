@@ -8,6 +8,7 @@ import ExtractTab from '../bottom-tabs/extract-tab/extract-tab';
 import PagoPaTab from '../bottom-tabs/pagoPa-tab/pagoPa-tab';
 import ProfileTab from '../bottom-tabs/profile-tab/profile-tab';
 import NotFoundScreen from '../../screens/not-found-screen/not-found-screen';
+import TaxPaymentsScreen from '../../screens/tax-payments-screen/tax-payments-screen';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -39,7 +40,7 @@ const MainApp: React.FC = () => {
       />
       <Tab.Screen
         name="PagoPA"
-        component={Dashboard}
+        component={TaxPaymentsScreen}
         options={{
           headerShown: false,
           tabBarButton: PagoPaTab,

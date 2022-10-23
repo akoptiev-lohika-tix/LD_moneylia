@@ -14,7 +14,9 @@ export const colors = {
     light: '#83828e',
     pressed: '#cccccc',
   },
-
+  rose: {
+    main: '#bf7ee6',
+  },
   error: {
     main: '#f83e5a',
   },
