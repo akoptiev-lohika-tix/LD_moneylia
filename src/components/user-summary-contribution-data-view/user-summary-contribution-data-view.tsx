@@ -1,6 +1,7 @@
 import React, { memo, NamedExoticComponent } from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { SvgProps } from 'react-native-svg';
+import { useNavigation } from '@react-navigation/native';
 
 import { colors, shadows } from '../../variables';
 import { financeTransformer } from '../../helpers';
@@ -15,9 +16,7 @@ type Props = {
   iconWidth: number;
   iconHeight: number;
   iconColor: string;
-  navigation: NativeStackNavigationProp<RootStackParamList, 'NotFound'>;
 };
-
 const UserSummaryContributionDataView: React.FC<Props> = ({
   icon,
   title,
@@ -25,9 +24,9 @@ const UserSummaryContributionDataView: React.FC<Props> = ({
   iconWidth,
   iconHeight,
   iconColor,
-  navigation,
 }) => {
   const { user } = useAppSelector((state) => state.user);
+  const navigation: NativeStackNavigationProp<RootStackParamList, 'NotFound'> = useNavigation();
   const IconComponent = icon;
   return (
     <Pressable

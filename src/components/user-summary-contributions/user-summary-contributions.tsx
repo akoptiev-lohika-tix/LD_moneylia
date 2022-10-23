@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import {
@@ -15,14 +15,8 @@ import PaidIcon from '../../svg-icons/paid-icon';
 import DueIcon from '../../svg-icons/due-icon';
 import AdvancePaymentIcon from '../../svg-icons/advance-payment-icon';
 import ModularityIcon from '../../svg-icons/modularity-icon';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../interfaces';
 
-type Props = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'NotFound'>;
-};
-
-const UserSummaryContributions: React.FC<Props> = ({ navigation }) => {
+const UserSummaryContributions: React.FC = () => {
   const { user } = useAppSelector((state) => state.user);
   let current = null;
 
@@ -43,7 +37,6 @@ const UserSummaryContributions: React.FC<Props> = ({ navigation }) => {
               iconHeight={32}
               iconWidth={32}
               iconColor={colors.primary.dark}
-              navigation={navigation}
             />
             <View style={styles.gap} />
             <UserSummaryContributionDataView
@@ -53,7 +46,6 @@ const UserSummaryContributions: React.FC<Props> = ({ navigation }) => {
               iconHeight={32}
               iconWidth={32}
               iconColor={colors.primary.dark}
-              navigation={navigation}
             />
           </View>
           <View style={styles.content}>
@@ -64,7 +56,6 @@ const UserSummaryContributions: React.FC<Props> = ({ navigation }) => {
               iconHeight={32}
               iconWidth={32}
               iconColor={colors.primary.dark}
-              navigation={navigation}
             />
             <View style={styles.gap} />
             <UserSummaryContributionDataView
@@ -74,7 +65,6 @@ const UserSummaryContributions: React.FC<Props> = ({ navigation }) => {
               iconHeight={32}
               iconWidth={32}
               iconColor={colors.primary.dark}
-              navigation={navigation}
             />
           </View>
         </>
@@ -103,4 +93,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default memo(UserSummaryContributions);
+export default UserSummaryContributions;
