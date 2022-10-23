@@ -13,9 +13,9 @@ import {
 } from '../../variables';
 import UserIcon from '../../svg-icons/user-icon';
 import { useAppSelector } from '../../redux/hooks';
-import UserSummaryDataView from '../user-summary-data-view/user-summary-data-view';
+import UserSummaryDataView from '../dashboard-user-summary-data-view/dashboard-user-summary-data-view';
 
-const UserSummary: React.FC = () => {
+const DashboardUserSummary: React.FC = () => {
   const { user } = useAppSelector((state) => state.user);
   return (
     <View style={styles.container}>
@@ -74,4 +74,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UserSummary;
+export default DashboardUserSummary;

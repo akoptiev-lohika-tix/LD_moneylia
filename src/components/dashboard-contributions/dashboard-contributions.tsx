@@ -10,13 +10,13 @@ import {
 } from '../../variables';
 import { useAppSelector } from '../../redux/hooks';
 import { useCurrentContribution } from '../../hooks';
-import UserSummaryContributionDataView from '../user-summary-contribution-data-view/user-summary-contribution-data-view';
+import UserSummaryContributionDataView from '../dashboard-contribution-data-view/dashboard-contribution-data-view';
 import PaidIcon from '../../svg-icons/paid-icon';
 import DueIcon from '../../svg-icons/due-icon';
 import AdvancePaymentIcon from '../../svg-icons/advance-payment-icon';
 import ModularityIcon from '../../svg-icons/modularity-icon';
 
-const UserSummaryContributions: React.FC = () => {
+const DashboardContributions: React.FC = () => {
   const { user } = useAppSelector((state) => state.user);
   let current = null;
 
@@ -93,4 +93,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UserSummaryContributions;
+export default DashboardContributions;

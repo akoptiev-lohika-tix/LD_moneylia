@@ -9,10 +9,10 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { fetchUserById } from '../../redux/slices/user-slice';
 import { USER_ID } from '../../constants';
 import { useShortName } from '../../hooks';
-import UserSummary from '../../components/user-summary/user-summary';
+import DashboardUserSummary from '../../components/dashboard-user-summary/dashboard-user-summary';
 import Spinner from '../../components/spinner/spinner';
 import ErrorView from '../../components/error-view/error-view';
-import UserSummaryContributions from '../../components/user-summary-contributions/user-summary-contributions';
+import DashboardContributions from '../../components/dashboard-contributions/dashboard-contributions';
 import { RootStackParamList } from '../../interfaces';
 
 type Props = {
@@ -52,8 +52,8 @@ const Dashboard: React.FC<Props> = ({ navigation }) => {
               </View>
             </View>
             <View style={styles.content}>
-              <UserSummary />
-              <UserSummaryContributions navigation={navigation} />
+              <DashboardUserSummary />
+              <DashboardContributions navigation={navigation} />
             </View>
           </View>
         </>

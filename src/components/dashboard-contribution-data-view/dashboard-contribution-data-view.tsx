@@ -17,7 +17,7 @@ type Props = {
   iconHeight: number;
   iconColor: string;
 };
-const UserSummaryContributionDataView: React.FC<Props> = ({
+const DashboardContributionDataView: React.FC<Props> = ({
   icon,
   title,
   value,
@@ -83,4 +83,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default memo(UserSummaryContributionDataView);
+export default memo(DashboardContributionDataView);

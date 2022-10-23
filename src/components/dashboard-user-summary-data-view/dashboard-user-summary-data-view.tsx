@@ -10,7 +10,7 @@ type Props = {
   width?: number;
 };
 
-const UserSummaryDataView: React.FC<Props> = ({ title, data, marginRight = 0, width = 140 }) => {
+const DashboardUserSummaryDataView: React.FC<Props> = ({ title, data, marginRight = 0, width = 140 }) => {
   const styles = StyleSheet.create({
     container: {
       width: width,
@@ -39,4 +39,4 @@ const UserSummaryDataView: React.FC<Props> = ({ title, data, marginRight = 0, wi
   );
 };
 
-export default memo(UserSummaryDataView);
+export default memo(DashboardUserSummaryDataView);
