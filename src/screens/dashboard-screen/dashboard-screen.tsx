@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, StatusBar } from 'react-native';
+import React, { memo, useEffect } from 'react';
+import { View, Text, StyleSheet, StatusBar, Pressable } from 'react-native';
 
 import { colors, WELCOME_TEXT } from '../../variables';
 import LogoIcon from '../../svg-icons/logo-icon';
@@ -12,9 +12,14 @@ import UserSummary from '../../components/user-summary/user-summary';
 import Spinner from '../../components/spinner/spinner';
 import ErrorView from '../../components/error-view/error-view';
 import UserSummaryContributions from '../../components/user-summary-contributions/user-summary-contributions';
+import { RootStackParamList } from '../../interfaces';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
+type Props = {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'NotFound'>;
+};
 
-const Dashboard: React.FC = () => {
+const Dashboard: React.FC<Props> = ({ navigation }) => {
   const dispatch = useAppDispatch();
   const { user, loadingUser, errorUser } = useAppSelector((state) => state.user);
   const { shortName } = useShortName(user?.name);
@@ -22,7 +27,6 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     dispatch(fetchUserById(USER_ID));
   }, []);
-
 
   return (
     <>
@@ -35,7 +39,9 @@ const Dashboard: React.FC = () => {
             <View style={styles.topBar}>
               <View style={styles.iconBar}>
                 <LogoIcon color={colors.common.white} width={28} height={22} />
-                <ChatIcon color={colors.common.white} width={28} height={28} />
+                <Pressable onPress={() => navigation.navigate('NotFound')}>
+                  <ChatIcon color={colors.common.white} width={28} height={28} />
+                </Pressable>
               </View>
               <View>
                 <Text style={styles.nameText}>Hello, {shortName}</Text>
@@ -44,7 +50,7 @@ const Dashboard: React.FC = () => {
             </View>
             <View style={styles.content}>
               <UserSummary />
-              <UserSummaryContributions />
+              <UserSummaryContributions navigation={navigation} />
             </View>
           </View>
         </>
@@ -53,7 +59,7 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard;
+export default memo(Dashboard);
 
 const styles = StyleSheet.create({
   container: {

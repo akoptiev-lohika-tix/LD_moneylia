@@ -1,6 +1,7 @@
 export const colors = {
   common: {
     white: '#ffffff',
+    black: '#000000'
   },
   primary: {
     main: '#3a3b7b',

@@ -5,6 +5,8 @@ import { SvgProps } from 'react-native-svg';
 import { colors, shadows } from '../../variables';
 import { financeTransformer } from '../../helpers';
 import { useAppSelector } from '../../redux/hooks';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../interfaces';
 
 type Props = {
   icon: NamedExoticComponent<SvgProps>;
@@ -13,6 +15,7 @@ type Props = {
   iconWidth: number;
   iconHeight: number;
   iconColor: string;
+  navigation: NativeStackNavigationProp<RootStackParamList, 'NotFound'>;
 };
 
 const UserSummaryContributionDataView: React.FC<Props> = ({
@@ -22,11 +25,12 @@ const UserSummaryContributionDataView: React.FC<Props> = ({
   iconWidth,
   iconHeight,
   iconColor,
+  navigation,
 }) => {
   const { user } = useAppSelector((state) => state.user);
   const IconComponent = icon;
   return (
-    <Pressable style={styles.container}>
+    <Pressable style={styles.container} onPress={() => navigation.navigate('NotFound')}>
       <View style={styles.icon}>
         <IconComponent width={iconWidth} height={iconHeight} color={iconColor} />
       </View>

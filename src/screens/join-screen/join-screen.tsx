@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity, Pressable } from 'react-native';
 
 import TextStyled from '../../components/text-styled/text-styled';
 import {
@@ -58,7 +58,7 @@ const JoinScreen: React.FC<Props> = ({ navigation }) => {
             />
           </TouchableOpacity>
         </View>
-        <View style={styles.link}>
+        <Pressable style={styles.link} onPress={() => navigation.navigate('NotFound')}>
           <TextStyled
             text={JOIN_SCREEN_LINK_TEXT}
             fontFamily={'Rubik Regular'}
@@ -67,7 +67,7 @@ const JoinScreen: React.FC<Props> = ({ navigation }) => {
             color={colors.primary.main}
             textDecorationLine={'underline'}
           />
-        </View>
+        </Pressable>
       </View>
     </View>
   );

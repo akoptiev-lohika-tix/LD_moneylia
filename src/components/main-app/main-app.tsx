@@ -47,7 +47,7 @@ const MainApp: React.FC = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={Dashboard}
+        component={NotFoundScreen}
         options={{
           headerShown: false,
           tabBarButton: ProfileTab,

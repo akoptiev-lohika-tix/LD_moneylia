@@ -9,7 +9,12 @@ const NotFoundScreen: React.FC = () => {
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.container}>
         <View style={styles.contentBox}>
-          <NotFoundIcon width={28} height={28} color={colors.error.main} />
+          <NotFoundIcon
+            width={28}
+            height={28}
+            color={colors.error.main}
+            testID={'not-found-icon'}
+          />
           <Text style={styles.text}>{NOT_FOUND_SCREEN_TEXT}</Text>
         </View>
       </View>
