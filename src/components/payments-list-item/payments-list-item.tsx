@@ -15,7 +15,7 @@ const PaymentsListItem: React.FC<Props> = ({ payment }) => {
   return (
     <Pressable style={({ pressed }) => [styles.container, pressed ? styles.pressed : null]}>
       <View style={styles.imageContainer}>
-        <PagoPaLogoIcon width={48} height={48} color={colors.rose.main} />
+        <PagoPaLogoIcon width={48} height={48} color={colors.rose.main} testID={'logo-icon'} />
       </View>
       <View style={styles.textContainer}>
         <View style={styles.topLine}>
@@ -27,7 +27,7 @@ const PaymentsListItem: React.FC<Props> = ({ payment }) => {
         </View>
       </View>
       <View style={styles.iconContainer}>
-        <PaymentArrowIcon color={colors.grey.icon} />
+        <PaymentArrowIcon color={colors.grey.icon} testID={'arrow-icon'} />
       </View>
     </Pressable>
   );

@@ -8,7 +8,7 @@ exports[`JoinScreen renders correctly 1`] = `
       "backgroundColor": "#ffffff",
       "height": "100%",
       "paddingHorizontal": 20,
-      "paddingTop": 84,
+      "paddingTop": 90,
     }
   }
 >
@@ -30,7 +30,7 @@ exports[`JoinScreen renders correctly 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 36,
+        "paddingHorizontal": 24,
       }
     }
   >
@@ -81,7 +81,9 @@ exports[`JoinScreen renders correctly 1`] = `
         accessible={true}
         collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -89,14 +91,16 @@ exports[`JoinScreen renders correctly 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Object {
-            "backgroundColor": "#7476ed",
-            "borderRadius": 4,
-            "marginBottom": 24,
-            "opacity": 1,
-            "paddingHorizontal": 75,
-            "paddingVertical": 16,
-          }
+          Array [
+            Object {
+              "backgroundColor": "#7476ed",
+              "borderRadius": 4,
+              "marginBottom": 24,
+              "paddingHorizontal": 75,
+              "paddingVertical": 16,
+            },
+            null,
+          ]
         }
         testID="join-button"
       >
@@ -128,9 +132,12 @@ exports[`JoinScreen renders correctly 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        Object {
-          "alignItems": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+          },
+          null,
+        ]
       }
     >
       <Text
