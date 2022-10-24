@@ -13,9 +13,9 @@ import {
 } from '../../variables';
 import UserIcon from '../../svg-icons/user-icon';
 import { useAppSelector } from '../../redux/hooks';
-import UserSummaryDataView from '../user-summary-data-view/user-summary-data-view';
+import UserSummaryDataView from '../dashboard-user-summary-data-view/dashboard-user-summary-data-view';
 
-const UserSummary: React.FC = () => {
+const DashboardUserSummary: React.FC = () => {
   const { user } = useAppSelector((state) => state.user);
   return (
     <View style={styles.container}>
@@ -31,7 +31,7 @@ const UserSummary: React.FC = () => {
         />
         <UserSummaryDataView title={USER_SUMMARY_BIRTHDAY_TITLE} data={user?.birthday} />
       </View>
-      <View style={styles.dataTopBar}>
+      <View style={styles.dataBottomBar}>
         <UserSummaryDataView title={USER_SUMMARY_CITY_TITLE} data={user?.city} marginRight={12} />
         <UserSummaryDataView
           title={USER_SUMMARY_COUNTRY_TITLE}
@@ -72,6 +72,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 16,
   },
+  dataBottomBar: {
+    flexDirection: 'row',
+  },
 });
 
-export default UserSummary;
+export default DashboardUserSummary;

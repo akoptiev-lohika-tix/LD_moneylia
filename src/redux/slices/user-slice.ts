@@ -1,12 +1,9 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import axios from 'axios';
-
 import { TransformedUser } from '../../interfaces';
-import { BASE_URL } from '../../constants';
-import { userIdTransformer } from '../../helpers';
 import { ERROR_GENERAL_MESSAGE } from '../../variables';
+import { fetchUserById } from '../../api';
 
 interface UserState {
   user: TransformedUser | null;
@@ -19,15 +16,6 @@ const initialState: UserState = {
   loadingUser: false,
   errorUser: null,
 };
-
-export const fetchUserById = createAsyncThunk('user/fetchUserById', async (id: string) => {
-  const response = await axios.get(`${BASE_URL}/${id}.json`);
-
-  return {
-    id: userIdTransformer(id),
-    ...response.data,
-  };
-});
 
 export const userSlice = createSlice({
   name: 'user',
@@ -49,3 +37,5 @@ export const userSlice = createSlice({
     });
   },
 });
+
+export default userSlice.reducer;

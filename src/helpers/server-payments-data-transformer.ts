@@ -1,5 +1,7 @@
-export const serverDataTransformer = (serverData: any): any[] => {
-  const result = [];
+import { Payment } from '../interfaces';
+
+export const serverPaymentsDataTransformer = (serverData: any): Payment[] => {
+  const result: Payment[] = [];
   for (const key in serverData) {
     const serializedData: any = {
       id: key,

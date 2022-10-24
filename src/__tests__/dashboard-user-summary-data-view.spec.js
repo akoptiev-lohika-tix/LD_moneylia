@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react-native';
 import renderer from 'react-test-renderer';
 
-import UserSummaryDataView from '../components/user-summary-data-view/user-summary-data-view';
+import UserSummaryDataView from '../components/dashboard-user-summary-data-view/dashboard-user-summary-data-view';
 
 const props = {
   title: 'Test title',

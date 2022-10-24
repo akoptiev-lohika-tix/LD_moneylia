@@ -79,7 +79,7 @@ const JoinScreen: React.FC<Props> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    paddingTop: 84,
+    paddingTop: 90,
     paddingHorizontal: 20,
     backgroundColor: colors.common.white,
     height: '100%',
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   content: {
-    paddingHorizontal: 36,
+    paddingHorizontal: 24,
   },
   title: {
     marginBottom: 8,

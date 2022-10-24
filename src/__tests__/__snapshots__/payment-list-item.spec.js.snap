@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentListItem renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderRadius": 8,
+        "flexDirection": "row",
+        "marginBottom": 12,
+        "paddingHorizontal": 8,
+        "paddingVertical": 12,
+      },
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(0, 102, 204, 0.1)",
+        "borderRadius": 4,
+        "marginRight": 12,
+        "padding": 4,
+      }
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={48}
+      bbWidth={48}
+      color={4290739942}
+      fill="none"
+      focusable={false}
+      height={48}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 48,
+            "width": 48,
+          },
+        ]
+      }
+      testID="logo-icon"
+      tintColor={4290739942}
+      width={48}
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          Array [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          d="m34.213 18.995-.013 3.786h-2.751V10h5.086c1.635 0 2.466.443 2.479 1.33v6.241c0 .888-.792 1.319-2.388 1.319h-2.4v.104h-.013Zm2.037-7.52h-2.063v5.927h2.063v-5.927ZM4.823 22.794 4.81 26.58H2.5V13.8h4.256c1.375 0 2.063.443 2.076 1.33v6.24c0 .889-.662 1.32-1.998 1.32H4.823v.104Zm1.712-7.507H4.81v5.927h1.725v-5.927ZM15.943 22.69h-4.386c-1.284 0-1.933-.445-1.933-1.332l.013-2.598c0-.875.662-1.319 1.998-1.332h2.011v-2.14h-1.725l-.013 1.174H9.65v-1.331c0-.875.675-1.306 2.024-1.306l2.258-.026c1.336 0 2.011.444 2.011 1.319v7.571Zm-4.01-1.489h1.74l-.014-2.285h-1.725v2.285ZM20.99 22.69h-2.024c-1.337 0-1.998-.445-1.998-1.32v-6.24c.013-.887.7-1.33 2.076-1.33H23.3V25.26c0 .888-.675 1.332-2.011 1.332h-2.297c-1.337 0-2.011-.444-2.011-1.332v-1.318h2.296v1.175h1.726v-2.324l-.013-.105ZM19.265 21.2h1.725v-5.914h-1.725v5.914ZM30.41 21.358c-.012.887-.7 1.318-2.076 1.318h-2.231c-1.35 0-2.025-.443-2.025-1.318v-6.24c0-.888.675-1.319 2.025-1.319h2.296c1.337 0 1.999.444 1.999 1.319v6.24h.013Zm-2.283-6.07h-1.739v5.926h1.726l.013-5.927Z"
+          fill={4290739942}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        />
+        <RNSVGPath
+          d="M47.487 11.397c0-.888-.792-1.319-2.388-1.319h-2.75c-1.61 0-2.414.444-2.414 1.319v11.41h2.75v-3.904h2.077v3.264c0 8.355-6.709 15.105-15.013 15.105-4.814 0-9.11-2.285-11.86-5.823l1.375-1.057-5.527-3.747.246 7.898 1.765-1.41c3.244 4.178 8.317 6.867 14 6.867 9.81 0 17.752-8.003 17.752-17.859l-.013-10.744Zm-2.738 6.018h-2.076v-5.874h2.076v5.874Z"
+          fill={4290739942}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+  <View
+    style={
+      Object {
+        "marginRight": 8,
+        "width": 227,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 35,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        numberOfLines={2}
+      >
+        TEST DESCRIPTION
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "Work Sans Regular",
+              "fontSize": 14,
+              "letterSpacing": -0.5,
+              "lineHeight": 21,
+            },
+            Object {
+              "color": "#a5a5aa",
+            },
+          ]
+        }
+      >
+        01/01/2022
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "fontFamily": "Work Sans Regular",
+              "fontSize": 14,
+              "letterSpacing": -0.5,
+              "lineHeight": 21,
+            },
+            Object {
+              "color": "#f83e5a",
+            },
+          ]
+        }
+      >
+        € 1,288
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "justifyContent": "center",
+      }
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={24}
+      bbWidth={24}
+      color={4288190369}
+      fill="none"
+      focusable={false}
+      height={24}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 24,
+            "width": 24,
+          },
+        ]
+      }
+      testID="arrow-icon"
+      tintColor={4288190369}
+      width={24}
+    >
+      <RNSVGGroup
+        fill={null}
+        propList={
+          Array [
+            "fill",
+          ]
+        }
+      >
+        <RNSVGPath
+          clipRule={0}
+          d="M8.293 4.293a1 1 0 0 1 1.414 0l7 7a1 1 0 0 1 0 1.414l-7 7a1 1 0 0 1-1.414-1.414L14.586 12 8.293 5.707a1 1 0 0 1 0-1.414Z"
+          fill={4288190369}
+          fillRule={0}
+          propList={
+            Array [
+              "fill",
+              "fillRule",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;

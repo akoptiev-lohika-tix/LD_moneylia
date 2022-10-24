@@ -7,13 +7,13 @@ import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 
-import JoinScreen from './src/screens/join-screen/join-screen';
-import { store } from './src/redux/store';
+import JoinScreen from './screens/join-screen/join-screen';
+import { store } from './redux/store';
 import { Provider } from 'react-redux';
-import { RootStackParamList } from './src/interfaces';
-import MainApp from './src/components/main-app/main-app';
-import NotFoundScreen from './src/screens/not-found-screen/not-found-screen';
-import { colors } from './src/variables';
+import { RootStackParamList } from './interfaces';
+import MainApp from './components/main-app/main-app';
+import NotFoundScreen from './screens/not-found-screen/not-found-screen';
+import { colors } from './variables';
 
 function cacheImages(images: any[]): Promise<any>[] {
   return images.map((image) => {
@@ -37,13 +37,13 @@ const App: React.FC = () => {
       try {
         await SplashScreen.preventAutoHideAsync();
 
-        const imageAssets = cacheImages([require('./src/assets/images/join-screen-image.png')]);
+        const imageAssets = cacheImages([require('./assets/images/join-screen-image.png')]);
 
         const fontAssets = cacheFonts([
-          { 'Work Sans Regular': require('./src/assets/fonts/WorkSans-Regular.ttf') },
-          { 'Work Sans SemiBold': require('./src/assets/fonts/WorkSans-SemiBold.ttf') },
-          { 'Rubik Regular': require('./src/assets/fonts/Rubik-Regular.ttf') },
-          { 'Rubik Medium': require('./src/assets/fonts/Rubik-Medium.ttf') },
+          { 'Work Sans Regular': require('./assets/fonts/WorkSans-Regular.ttf') },
+          { 'Work Sans SemiBold': require('./assets/fonts/WorkSans-SemiBold.ttf') },
+          { 'Rubik Regular': require('./assets/fonts/Rubik-Regular.ttf') },
+          { 'Rubik Medium': require('./assets/fonts/Rubik-Medium.ttf') },
         ]);
 
         await Promise.all([...imageAssets, ...fontAssets]);

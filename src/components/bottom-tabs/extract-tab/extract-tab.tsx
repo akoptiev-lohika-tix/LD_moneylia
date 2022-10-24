@@ -5,6 +5,12 @@ import ExtractTabIcon from '../../../svg-icons/extract-tab-icon';
 
 const ExtractTab = (props: any) => {
   const styles = StyleSheet.create({
+    container: {
+      marginRight: 28,
+    },
+    iconContainer: {
+      marginBottom: 2,
+    },
     text: {
       fontFamily: 'Rubik Regular',
       fontSize: 11,
@@ -12,28 +18,27 @@ const ExtractTab = (props: any) => {
       letterSpacing: 0.01,
       color: props.accessibilityState.selected ? colors.primary.dark : colors.grey.light,
     },
-    iconView: {
-      marginBottom: 6,
-    },
   });
   return (
-    <Pressable
-      {...props}
-      style={
-        props.accessibilityState.selected
-          ? [props.style, { borderTopColor: colors.primary.dark, borderTopWidth: 2 }]
-          : props.style
-      }
-    >
-      <View style={styles.iconView}>
-        <ExtractTabIcon
-          width={28}
-          height={28}
-          color={props.accessibilityState.selected ? colors.primary.dark : colors.grey.light}
-        />
-      </View>
-      <Text style={styles.text}>Extract</Text>
-    </Pressable>
+    <View style={styles.container}>
+      <Pressable
+        {...props}
+        style={
+          props.accessibilityState.selected
+            ? [props.style, { borderTopColor: colors.primary.dark, borderTopWidth: 2 }]
+            : props.style
+        }
+      >
+        <View style={styles.iconContainer}>
+          <ExtractTabIcon
+            width={28}
+            height={28}
+            color={props.accessibilityState.selected ? colors.primary.dark : colors.grey.light}
+          />
+        </View>
+        <Text style={styles.text}>Extract</Text>
+      </Pressable>
+    </View>
   );
 };
 
