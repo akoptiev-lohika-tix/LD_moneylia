@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, ListRenderItem } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react';
+import { View, Text, StyleSheet, FlatList, ListRenderItem, RefreshControl } from 'react-native';
 
 import {
   colors,
@@ -18,6 +18,7 @@ import Spinner from '../../components/spinner/spinner';
 import ErrorView from '../../components/error-view/error-view';
 
 const TaxPaymentsScreen: React.FC = () => {
+  const [refreshing, setRefreshing] = useState(false);
   const dispatch = useAppDispatch();
   const { payments, loadingPayments, errorPayments } = useAppSelector((state) => state.payments);
 
@@ -25,7 +26,18 @@ const TaxPaymentsScreen: React.FC = () => {
     dispatch(fetchPayments(USER_ID));
   }, []);
 
+  const wait = (timeout: number): Promise<any> => {
+    return new Promise((resolve) => setTimeout(resolve, timeout));
+  };
+
   const renderItem: ListRenderItem<Payment> = ({ item }) => <PaymentsListItem payment={item} />;
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    wait(1000)
+      .then(() => dispatch(fetchPayments(USER_ID)))
+      .then(() => setRefreshing(false));
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -44,7 +56,7 @@ const TaxPaymentsScreen: React.FC = () => {
         <Text style={styles.contentTitle}>{TAX_PAYMENTS_CONTENT_TITLE}</Text>
         <Text style={styles.contentDescription}>{TAX_PAYMENTS_CONTENT_DESCRIPTION}</Text>
       </View>
-      {loadingPayments && <Spinner />}
+      {loadingPayments && !refreshing && <Spinner />}
       {errorPayments && <ErrorView message={errorPayments} />}
       {!loadingPayments && !errorPayments && (
         <View style={styles.listContainer}>
@@ -53,6 +65,7 @@ const TaxPaymentsScreen: React.FC = () => {
             data={payments}
             renderItem={renderItem}
             keyExtractor={(item: Payment) => item.id}
+            refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
           />
         </View>
       )}
