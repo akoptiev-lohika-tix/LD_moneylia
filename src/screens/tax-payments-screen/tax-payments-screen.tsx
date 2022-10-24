@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ListRenderItem } from 'react-native';
 
 import {
   colors,
@@ -12,6 +12,10 @@ import PagoPaLogoIcon from '../../svg-icons/pago-pa-logo-icon';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { fetchPayments } from '../../api';
 import { USER_ID } from '../../constants';
+import PaymentsListItem from '../../components/payments-list-item/payments-list-item';
+import { Payment } from '../../interfaces';
+import Spinner from '../../components/spinner/spinner';
+import ErrorView from '../../components/error-view/error-view';
 
 const TaxPaymentsScreen: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -20,6 +24,9 @@ const TaxPaymentsScreen: React.FC = () => {
   useEffect(() => {
     dispatch(fetchPayments(USER_ID));
   }, []);
+
+  const renderItem: ListRenderItem<Payment> = ({ item }) => <PaymentsListItem payment={item} />;
+
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
@@ -30,19 +37,25 @@ const TaxPaymentsScreen: React.FC = () => {
           <View>
             <Text style={styles.topBarTitle}>{TAX_PAYMENTS_TOP_BAR_TITLE}</Text>
           </View>
-          <PagoPaLogoIcon color={colors.common.white} />
+          <PagoPaLogoIcon width={50} height={50} color={colors.common.white} />
         </View>
       </View>
       <View style={styles.content}>
         <Text style={styles.contentTitle}>{TAX_PAYMENTS_CONTENT_TITLE}</Text>
         <Text style={styles.contentDescription}>{TAX_PAYMENTS_CONTENT_DESCRIPTION}</Text>
       </View>
-      <View>
-        <Text>
-          {payments && payments[0].id}
-          {payments && payments[1].id}
-        </Text>
-      </View>
+      {loadingPayments && <Spinner />}
+      {errorPayments && <ErrorView message={errorPayments} />}
+      {!loadingPayments && !errorPayments && (
+        <View style={styles.listContainer}>
+          <FlatList
+            style={styles.paymentsList}
+            data={payments}
+            renderItem={renderItem}
+            keyExtractor={(item: Payment) => item.id}
+          />
+        </View>
+      )}
     </View>
   );
 };
@@ -76,6 +89,12 @@ const styles = StyleSheet.create({
     color: colors.common.white,
   },
   content: {
+    paddingHorizontal: 16,
+  },
+  listContainer: {
+    flex: 1,
+  },
+  paymentsList: {
     paddingHorizontal: 16,
   },
   contentTitle: {

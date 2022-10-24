@@ -1,4 +1,4 @@
-export interface Payments {
+export interface Payment {
   id: string;
   description: string;
   expiryDate: string;

@@ -13,6 +13,8 @@ export const colors = {
     dark: '#312e43',
     light: '#83828e',
     pressed: '#cccccc',
+    icon: '#9897a1',
+    date: '#a5a5aa',
   },
   rose: {
     main: '#bf7ee6',

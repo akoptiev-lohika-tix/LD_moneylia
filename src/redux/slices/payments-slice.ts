@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import { Payments } from '../../interfaces';
+import { Payment } from '../../interfaces';
 import { ERROR_GENERAL_MESSAGE } from '../../variables';
 import { fetchPayments } from '../../api';
 
 interface PaymentsState {
-  payments: Payments[] | null;
+  payments: Payment[] | null;
   loadingPayments: boolean;
   errorPayments: string | null;
 }
@@ -25,7 +25,7 @@ export const paymentsSlice = createSlice({
     builder.addCase(fetchPayments.pending, (state) => {
       state.loadingPayments = true;
     });
-    builder.addCase(fetchPayments.fulfilled, (state, action: PayloadAction<Payments[]>) => {
+    builder.addCase(fetchPayments.fulfilled, (state, action: PayloadAction<Payment[]>) => {
       state.loadingPayments = false;
       state.payments = action.payload;
       state.errorPayments = null;
