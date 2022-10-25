@@ -1,12 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text, StatusBar } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import NotFoundIcon from '../../svg-icons/not-found-icon';
 import { colors, NOT_FOUND_SCREEN_TEXT, shadows } from '../../variables';
 
 const NotFoundScreen: React.FC = () => {
   return (
     <>
-      <StatusBar barStyle={'dark-content'} />
       <View style={styles.container}>
         <View style={styles.contentBox}>
           <NotFoundIcon
@@ -25,7 +24,7 @@ const NotFoundScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
-    paddingVertical: 120,
+    paddingVertical: 20,
     backgroundColor: colors.primary.light,
     flex: 1,
   },

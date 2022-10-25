@@ -1,19 +1,30 @@
 import React, { memo } from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
 
-import { Payment } from '../../interfaces';
+import { Payment, RootStackParamList } from '../../interfaces';
 import PagoPaLogoIcon from '../../svg-icons/pago-pa-logo-icon';
 import { colors } from '../../variables';
 import PaymentArrowIcon from '../../svg-icons/payment-arrow-icon';
 import { financeTransformer } from '../../helpers';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 
 type Props = {
   payment: Payment;
 };
 
 const PaymentsListItem: React.FC<Props> = ({ payment }) => {
+  const navigation: NativeStackNavigationProp<RootStackParamList, 'PaymentDetails'> =
+    useNavigation();
   return (
-    <Pressable style={({ pressed }) => [styles.container, pressed ? styles.pressed : null]}>
+    <Pressable
+      style={({ pressed }) => [styles.container, pressed ? styles.pressed : null]}
+      onPress={() => {
+        navigation.navigate('PaymentDetails', {
+          paymentId: payment.id,
+        });
+      }}
+    >
       <View style={styles.imageContainer}>
         <PagoPaLogoIcon width={48} height={48} color={colors.rose.main} testID={'logo-icon'} />
       </View>
@@ -41,6 +52,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.common.white,
     borderRadius: 8,
     marginBottom: 12,
+    shadowRadius: 6,
+    shadowOpacity: 1,
+    shadowOffset: { width: 0, height: 0 },
+    shadowColor: 'rgba(0, 0, 0, 0.08)',
   },
   imageContainer: {
     backgroundColor: 'rgba(0, 102, 204, 0.1)',

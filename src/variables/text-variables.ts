@@ -31,3 +31,14 @@ export const TAX_PAYMENTS_TOP_BAR_TITLE = 'Tax payments';
 export const TAX_PAYMENTS_CONTENT_TITLE = 'Movements to pay';
 export const TAX_PAYMENTS_CONTENT_DESCRIPTION =
   'View pending transactions for the past two years and proceed to payment.';
+
+// Payment Details
+export const PAYMENT_DETAILS_TITLE = 'Payment notice';
+export const PAYMENT_DETAILS_NAV_TITLE = 'Payment details';
+export const PAYMENT_DETAILS_CREDITOR_TITLE = 'Creditor';
+export const PAYMENT_DETAILS_CAUSAL_TITLE = 'Causal';
+export const PAYMENT_DETAILS_DATE_TITLE = 'Expiry date';
+export const PAYMENT_DETAILS_TAX_CODE_TITLE = 'Creditor tax code';
+export const PAYMENT_DETAILS_NOTICE_CODE_TITLE = 'Notice code';
+export const PAYMENT_DETAILS_BOTTOM_ACTION_TEXT = 'Total due';
+export const PAYMENT_DETAILS_BOTTOM_ACTION_BUTTON_TEXT = 'Pay now';
