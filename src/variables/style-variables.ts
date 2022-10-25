@@ -15,6 +15,7 @@ export const colors = {
     pressed: '#cccccc',
     icon: '#9897a1',
     date: '#a5a5aa',
+    border: '#eaeaec',
   },
   rose: {
     main: '#bf7ee6',

@@ -2,6 +2,7 @@ export type RootStackParamList = {
   JoinScreen: undefined;
   Main: undefined;
   NotFound: undefined;
+  PaymentDetails: { paymentId: string };
 };
 
 export type RootTabParamList = {
@@ -10,3 +11,5 @@ export type RootTabParamList = {
   PagoPA: undefined;
   Profile: undefined;
 };
+
+export type RootParamList = RootStackParamList | RootTabParamList;

@@ -13,7 +13,9 @@ import { Provider } from 'react-redux';
 import { RootStackParamList } from './interfaces';
 import MainApp from './components/main-app/main-app';
 import NotFoundScreen from './screens/not-found-screen/not-found-screen';
-import { colors } from './variables';
+import { PAYMENT_DETAILS_NAV_TITLE } from './variables';
+import PaymentDetailsScreen from './screens/payment-details-screen/payment-details-screen';
+import HeaderNavigation from './components/header-navigation/header-navigation';
 
 function cacheImages(images: any[]): Promise<any>[] {
   return images.map((image) => {
@@ -67,7 +69,10 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="JoinScreen">
+        <Stack.Navigator
+          initialRouteName="JoinScreen"
+          screenOptions={{ header: (props) => <HeaderNavigation {...props} /> }}
+        >
           <Stack.Screen name="JoinScreen" component={JoinScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Main" component={MainApp} options={{ headerShown: false }} />
           <Stack.Screen
@@ -75,8 +80,13 @@ const App: React.FC = () => {
             component={NotFoundScreen}
             options={{
               title: '',
-              headerStyle: { backgroundColor: colors.primary.light },
-              headerTintColor: colors.common.black,
+            }}
+          />
+          <Stack.Screen
+            name="PaymentDetails"
+            component={PaymentDetailsScreen}
+            options={{
+              title: PAYMENT_DETAILS_NAV_TITLE,
             }}
           />
         </Stack.Navigator>

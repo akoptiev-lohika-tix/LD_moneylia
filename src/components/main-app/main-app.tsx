@@ -9,12 +9,15 @@ import PagoPaTab from '../bottom-tabs/pagoPa-tab/pagoPa-tab';
 import ProfileTab from '../bottom-tabs/profile-tab/profile-tab';
 import NotFoundScreen from '../../screens/not-found-screen/not-found-screen';
 import TaxPaymentsScreen from '../../screens/tax-payments-screen/tax-payments-screen';
+import HeaderNavigation from '../header-navigation/header-navigation';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 const MainApp: React.FC = () => {
   return (
     <Tab.Navigator
+      initialRouteName="Dashboard"
+      backBehavior={'order'}
       screenOptions={{
         tabBarStyle: {
           height: 70,
@@ -26,6 +29,7 @@ const MainApp: React.FC = () => {
           width: 58,
           maxWidth: 58,
         },
+        header: (props) => <HeaderNavigation {...props} />,
       }}
     >
       <Tab.Screen
@@ -40,7 +44,8 @@ const MainApp: React.FC = () => {
         name="Extract"
         component={NotFoundScreen}
         options={{
-          headerShown: false,
+          headerLeft: () => null,
+          headerStyle: { backgroundColor: 'red' },
           tabBarButton: ExtractTab,
         }}
       />
@@ -56,7 +61,6 @@ const MainApp: React.FC = () => {
         name="Profile"
         component={NotFoundScreen}
         options={{
-          headerShown: false,
           tabBarButton: ProfileTab,
         }}
       />
